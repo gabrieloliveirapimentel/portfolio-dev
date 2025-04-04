@@ -5,17 +5,15 @@ import {
   PiEnvelope,
 } from "react-icons/pi";
 import { PiArrowUpRightBold } from "react-icons/pi";
-
-import type { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import backgroundImg from "../../assets/Background_Contacts.png";
-import { Form } from "@/components/form";
 
 interface SocialLink {
   id: number;
   name: string;
-  icon: ReactNode;
   url: string;
+  icon: ReactNode;
 }
 
 export function Contact() {
@@ -23,68 +21,63 @@ export function Contact() {
     {
       id: 1,
       name: "LinkedIn",
-      icon: <PiLinkedinLogo className="text-xl" />,
       url: "https://www.linkedin.com",
+      icon: <PiLinkedinLogo className="text-xl " />,
     },
     {
       id: 2,
       name: "Instagram",
-      icon: <PiInstagramLogo className="text-xl" />,
       url: "https://www.instagram.com",
+      icon: <PiInstagramLogo className="text-xl " />,
     },
     {
       id: 3,
       name: "GitHub",
-      icon: <PiGithubLogo className="text-xl" />,
       url: "https://github.com",
+      icon: <PiGithubLogo className="text-xl " />,
     },
     {
       id: 4,
       name: "E-mail",
-      icon: <PiEnvelope className="text-xl" />,
-      url: "https://github.com",
+      url: "mailto:email@email.com",
+      icon: <PiEnvelope className="text-xl " />,
     },
   ];
 
   return (
     <section
-      className="py-20"
+      className="py-24 "
       style={{
         backgroundImage: `url(${backgroundImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="text-center mb-8">
-        <p className="text-purple-500 mb-2 font-['Inconsolata'] text-xl">
+      <div className="text-center mb-8 ">
+        <span className="text-purple-500 mb-2 font-['Inconsolata'] text-xl">
           Contato
-        </p>
-        <h2 className="text-2xl md:text-3xl font-bold mb-3 font-['Asap']">
-          Gostou do meu trabalho?
-        </h2>
-        <p className="text-gray-400 mb-8 text-base max-md:text-sm">
+        </span>
+        <h2 className="text-2xl md:text-3xl mb-3">Gostou do meu trabalho?</h2>
+        <span className="text-gray-400 mb-8 text-base max-md:text-sm">
           Entre em contato ou acompanhe as minhas redes sociais!
-        </p>
+        </span>
       </div>
 
-      <div className="max-w-md mx-auto space-y-4">
+      <div className="max-w-md mx-auto space-y-4 mb-16">
         {socialLinks.map((link) => (
           <button
             key={link.id}
-            className="flex items-center justify-between bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors w-full"
+            className="flex items-center justify-between bg-[#292C34] p-4 rounded-lg border-[#292C34] border-2 hover:border-blue-400 w-full hover:text-blue-400"
           >
             <div className="flex items-center gap-3">
               {link.icon}
               <span>{link.name}</span>
             </div>
             <a href={link.url} target="_blank">
-              <PiArrowUpRightBold className="text-blue-400" />
+              <PiArrowUpRightBold className="text-xl" />
             </a>
           </button>
         ))}
-      </div>
-      <div className="max-w-2xl mx-auto mt-10">
-        <Form />
       </div>
     </section>
   );
