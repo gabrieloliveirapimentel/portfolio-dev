@@ -1,49 +1,8 @@
-import {
-  PiLinkedinLogo,
-  PiInstagramLogo,
-  PiGithubLogo,
-  PiEnvelope,
-} from "react-icons/pi";
 import { PiArrowUpRightBold } from "react-icons/pi";
-import { type ReactNode } from "react";
-
 import backgroundImg from "../../assets/Background_Contacts.png";
-
-interface SocialLink {
-  id: number;
-  name: string;
-  url: string;
-  icon: ReactNode;
-}
+import { socialLinks } from "../../data/data";
 
 export function Contact() {
-  const socialLinks: SocialLink[] = [
-    {
-      id: 1,
-      name: "LinkedIn",
-      url: "https://www.linkedin.com",
-      icon: <PiLinkedinLogo className="text-xl " />,
-    },
-    {
-      id: 2,
-      name: "Instagram",
-      url: "https://www.instagram.com",
-      icon: <PiInstagramLogo className="text-xl " />,
-    },
-    {
-      id: 3,
-      name: "GitHub",
-      url: "https://github.com",
-      icon: <PiGithubLogo className="text-xl " />,
-    },
-    {
-      id: 4,
-      name: "E-mail",
-      url: "mailto:email@email.com",
-      icon: <PiEnvelope className="text-xl " />,
-    },
-  ];
-
   return (
     <section
       className="py-24 "
